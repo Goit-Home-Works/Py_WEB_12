@@ -5,7 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from db.database import get_db
-from schemas import ContactFavoriteModel, ContactModel, ContactResponse
+from schemas.contact import ContactFavoriteModel, ContactModel, ContactResponse
 from repository import contacts as repository_contacts
 
 

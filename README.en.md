@@ -1,5 +1,5 @@
 # Homework #12
-In this homework assignment, we continue to refine our REST API application from homework #11.
+In this homework assignment, we continue to refine our REST API application from [homework #11](https://github.com/Goit-Home-Works/Py_WEB_11).
 
 ## Tasks
 Implement authentication mechanism in the application.
