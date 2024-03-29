@@ -6,9 +6,6 @@ from db.models import User
 from services.auth import Auth
 from repository import users as repository_users
 
-# from src.database.db import get_db
-
-
 auth_service = Auth()
 
 

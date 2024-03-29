@@ -29,7 +29,7 @@ app.add_middleware(
 
 
 static_files_path = os.path.join(os.path.dirname(__file__), "static")
-print("STATIC: ", static_files_path)
+# print("STATIC: ", static_files_path)
 app.mount("/static", StaticFiles(directory=static_files_path), name="static")
 
 templates_path = os.path.join(os.path.dirname(__file__), "templates")

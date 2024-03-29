@@ -101,7 +101,7 @@ async def login(
             )
         else:
             response.delete_cookie(key="refresh_token", httponly=True, path="/api/")
-    print("login", token)
+    print("login: ", token)
     return token
 
 
