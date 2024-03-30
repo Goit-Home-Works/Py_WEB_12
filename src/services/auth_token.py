@@ -59,12 +59,12 @@ class AuthToken(PassCrypt):
     ) -> tuple[str, datetime]:
         to_encode = data.copy()
         if expires_delta:
-            expire = datetime.datetime.now(datetime.timezone.utc) + timedelta(seconds=expires_delta)
+            expire = datetime.now(timezone.utc) + timedelta(seconds=expires_delta)
         else:
-            expire = datetime.datetime.now(datetime.timezone.utc) + timedelta(minutes=15)
+            expire = datetime.now(timezone.utc) + timedelta(minutes=15)
         expire = expire.replace(tzinfo=timezone.utc)
         to_encode.update(
-            {"iat": datetime.datetime.now(datetime.timezone.utc), "exp": expire, "scope": "access_token"}
+            {"iat": datetime.now(timezone.utc), "exp": expire, "scope": "access_token"}
         )
         encoded_access_token = self.encode_jwt(to_encode)
         return encoded_access_token, expire

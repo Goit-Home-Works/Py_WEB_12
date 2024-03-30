@@ -26,12 +26,12 @@ class Auth(AuthToken):
     ) -> tuple[str, datetime]:
         to_encode = data.copy()
         if expires_delta:
-            expire = datetime.datetime.now(datetime.timezone.utc) + timedelta(seconds=expires_delta)
+            expire = datetime.now(timezone.utc) + timedelta(seconds=expires_delta)
         else:
-            expire = datetime.datetime.now(datetime.timezone.utc) + timedelta(days=7)
+            expire = datetime.now(timezone.utc) + timedelta(days=7)
         expire = expire.replace(tzinfo=timezone.utc)
         to_encode.update(
-            {"iat": datetime.datetime.now(datetime.timezone.utc), "exp": expire, "scope": "refresh_token"}
+            {"iat": datetime.now(timezone.utc), "exp": expire, "scope": "refresh_token"}
         )
         encoded_refresh_token = jwt.encode(
             to_encode, self.SECRET_KEY, algorithm=self.ALGORITHM
