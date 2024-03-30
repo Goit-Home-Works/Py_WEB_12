@@ -13,3 +13,13 @@ For all POST operations to create a new resource, the server returns a status of
 During the POST operation for authentication, the server accepts a request with user data (email, password) in the request body.
 If the user does not exist or the password does not match, an HTTP 401 Unauthorized error is returned.
 The authorization mechanism using JWT tokens is implemented with a pair of tokens: an access token and a refresh token.
+
+## Execution
+
+To run the program, copy and paste the following command into your terminal:
+
+```bash
+python3 src/main.py
+```
+
+After that, click on API DOC button.
